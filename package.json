@@ -1,0 +1,19 @@
+{
+  "name": "codingclub-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.7.12",
+    "swiper": "^11.2.6",
+    "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  schedule: string;
+}
+
+const { title, tagline, schedule } = Astro.props;
+---
+
+<section id="events" class="flex flex-col items-center justify-center px-4">
+  <h1 class="mb-2.5 mt-[130px] text-center text-[30px] font-bold md:mt-20 md:text-[50px]">
+    {title}
+  </h1>
+  <p class="mb-2.5 text-center font-sans text-[15px]">{tagline}</p>
+  <p class="mb-2.5 text-center font-sans text-[15px]">{schedule}</p>
+  <iframe
+    class="mt-[15px] h-[500px] w-full max-w-[500px] rounded-[20px] border-0"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.552213029674!2d16.335251576621094!3d48.19597857124996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07c0496e3d1b%3A0x14285a13471b6306!2sJO%26JOE%20Wien!5e0!3m2!1sen!2sat!4v1709737886565!5m2!1sen!2sat"
+    width="600"
+    height="450"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Jo&Joe Vienna map"
+  ></iframe>
+</section>

@@ -1,0 +1,51 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+interface Member {
+  name: string;
+  role: string;
+  image: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  members: Member[];
+}
+
+const { title, members } = Astro.props;
+---
+
+<section>
+  <SectionTitle>{title}</SectionTitle>
+  <div class="mx-auto flex max-w-[1000px] flex-wrap items-center justify-center">
+    {
+      members.map((member) => {
+        const portrait = (
+          <img
+            class="mx-2.5 mt-5 h-[200px] w-[150px] rounded-[20px] object-cover md:h-[300px] md:w-[200px]"
+            src={member.image}
+            alt={member.name}
+            loading="lazy"
+          />
+        );
+
+        return (
+          <figure>
+            {member.href ? (
+              <a href={member.href} target="_blank" rel="noreferrer">
+                {portrait}
+              </a>
+            ) : (
+              portrait
+            )}
+            <figcaption>
+              <h3 class="text-center text-[30px] font-bold">{member.name}</h3>
+              <p class="text-center text-[15px]">{member.role}</p>
+            </figcaption>
+          </figure>
+        );
+      })
+    }
+  </div>
+</section>

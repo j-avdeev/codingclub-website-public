@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Carousel from "../components/Carousel.astro";
+import ConnectLinks from "../components/ConnectLinks.astro";
+import Contact from "../components/Contact.astro";
+import Events from "../components/Events.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import MembersGrid from "../components/MembersGrid.astro";
+import Partners from "../components/Partners.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
+import { presentationSlides, pictureSlides } from "../data/gallery";
+import { members } from "../data/members";
+import { partners } from "../data/partners";
+import { projects } from "../data/projects";
+import { socialLinks } from "../data/socialLinks";
+import { frontmatter as copy } from "../content/home.mdx";
+---
+
+<BaseLayout title={copy.title}>
+  <Header />
+  <main class="mt-[230px] flex w-full flex-col items-center justify-center">
+    <Hero />
+    <Events title={copy.eventTitle} tagline={copy.eventTagline} schedule={copy.eventSchedule} />
+    <Carousel title={copy.presentationsTitle} slides={presentationSlides} />
+    <ProjectsGrid title={copy.projectsTitle} projects={projects} />
+    <Carousel title={copy.picturesTitle} slides={pictureSlides} className="md:mt-20" />
+    <MembersGrid title={copy.membersTitle} members={members} />
+    <ConnectLinks title={copy.connectTitle} links={socialLinks} />
+    <Partners title={copy.partnersTitle} partners={partners} />
+    <Contact title={copy.contactTitle} email={copy.contactEmail} />
+    <div class="bg-gray-500"></div>
+  </main>
+</BaseLayout>
