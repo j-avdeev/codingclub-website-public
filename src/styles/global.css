@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans Display", sans-serif;
+  --font-mono: "Noto Sans Mono", monospace;
+}
+
+html,
+body {
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+.swiper-scrollbar {
+  display: none;
+}

@@ -1,0 +1,28 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+interface SocialLink {
+  href: string;
+  image: string;
+  alt: string;
+  className: string;
+}
+
+interface Props {
+  title: string;
+  links: SocialLink[];
+}
+
+const { title, links } = Astro.props;
+---
+
+<section id="connect" class="flex w-full flex-col items-center justify-center text-center">
+  <SectionTitle>{title}</SectionTitle>
+  {
+    links.map((link) => (
+      <a href={link.href} target="_blank" rel="noreferrer">
+        <img class={`${link.className} p-2.5`} src={link.image} alt={link.alt} loading="lazy" />
+      </a>
+    ))
+  }
+</section>

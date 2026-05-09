@@ -1,0 +1,39 @@
+---
+const navItems = [
+  {
+    href: "#events",
+    label: "Events",
+  },
+  {
+    href: "#connect",
+    label: "Connect",
+  },
+  {
+    href: "#partner",
+    label: "Partner",
+  },
+  {
+    href: "#contact",
+    label: "Contact",
+  },
+];
+---
+
+<header class="fixed left-0 top-0 z-50 w-full bg-white">
+  <div class="w-full">
+    <img class="mx-auto block h-auto w-20 md:w-[120px]" src="/logo.jpeg" alt="Coding Club logo" />
+  </div>
+  <nav aria-label="Main navigation">
+    <ul class="mx-auto my-5 flex w-fit items-center justify-center gap-5 overflow-hidden bg-white">
+      {
+        navItems.map((item) => (
+          <li class="list-none font-mono text-[15px] font-[350] md:text-[1.6rem]">
+            <a class="inline-block text-black no-underline hover:underline" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

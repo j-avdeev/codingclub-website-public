@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  email: string;
+}
+
+const { title, email } = Astro.props;
+---
+
+<section id="contact" class="mb-[30px] flex w-full flex-col items-center justify-center text-center">
+  <h1 class="mb-2.5 mt-[30px] text-center text-[30px] font-bold md:text-[50px]">{title}</h1>
+  <p class="m-0 text-center font-sans text-[15px]">{email}</p>
+</section>

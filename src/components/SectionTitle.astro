@@ -1,0 +1,10 @@
+---
+interface Props {
+  id?: string;
+}
+const { id } = Astro.props;
+---
+
+<h1 id={id} class="mb-2.5 mt-[100px] text-center text-[30px] font-bold md:text-[50px]">
+  <slot />
+</h1>

@@ -1,0 +1,33 @@
+---
+interface Partner {
+  href: string;
+  image: string;
+  alt: string;
+  className: string;
+}
+
+interface Props {
+  title: string;
+  partners: Partner[];
+}
+
+const { title, partners } = Astro.props;
+---
+
+<section id="partner" class="w-full px-4">
+  <h1 class="mb-2.5 mt-[50px] text-center text-[30px] font-bold md:text-[50px]">{title}</h1>
+  <div class="flex w-full flex-row items-center justify-center">
+    {
+      partners.map((partner) => (
+        <a href={partner.href} target="_blank" rel="noreferrer">
+          <img
+            class={`${partner.className} mx-2.5 object-contain max-md:h-20 max-md:w-20`}
+            src={partner.image}
+            alt={partner.alt}
+            loading="lazy"
+          />
+        </a>
+      ))
+    }
+  </div>
+</section>
