@@ -16,14 +16,14 @@ interface Props {
 const { title, members } = Astro.props;
 ---
 
-<section>
+<section class="w-full px-4">
   <SectionTitle>{title}</SectionTitle>
-  <div class="mx-auto flex max-w-[1000px] flex-wrap items-center justify-center">
+  <div class="mx-auto grid max-w-[1000px] grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
     {
       members.map((member) => {
         const portrait = (
           <img
-            class="mx-2.5 mt-5 h-[200px] w-[150px] rounded-[20px] object-cover md:h-[300px] md:w-[200px]"
+            class="aspect-[3/4] w-full rounded-xl object-cover"
             src={member.image}
             alt={member.name}
             loading="lazy"
@@ -31,17 +31,17 @@ const { title, members } = Astro.props;
         );
 
         return (
-          <figure>
+          <figure class="m-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
             {member.href ? (
-              <a href={member.href} target="_blank" rel="noreferrer">
+              <a class="block rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href={member.href} target="_blank" rel="noreferrer">
                 {portrait}
               </a>
             ) : (
               portrait
             )}
-            <figcaption>
-              <h3 class="text-center text-[30px] font-bold">{member.name}</h3>
-              <p class="text-center text-[15px]">{member.role}</p>
+            <figcaption class="pt-3">
+              <h3 class="text-center text-lg font-bold leading-tight text-slate-950">{member.name}</h3>
+              <p class="mt-1 text-center text-sm text-slate-600">{member.role}</p>
             </figcaption>
           </figure>
         );

@@ -24,31 +24,31 @@ interface Props {
 const { title, projects } = Astro.props;
 ---
 
-<section>
+<section class="w-full px-4">
   <SectionTitle>{title}</SectionTitle>
-  <div class="mx-auto flex max-w-[900px] flex-wrap items-center justify-center">
+  <div class="mx-auto grid max-w-[900px] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
     {
       projects.map((project) => (
-        <figure class="text-center">
+        <figure class="m-0 flex h-full flex-col items-center rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
           <img
             class:list={[
-              "mx-2.5 mt-5 rounded-[15px]",
-              project.wide ? "h-[150px] w-[350px]" : "h-[180px] w-[180px]",
+              "rounded-xl object-contain",
+              project.wide ? "h-[90px] w-full max-w-[240px]" : "h-[108px] w-[108px]",
             ]}
             src={project.image}
             alt={project.imageAlt}
             loading="lazy"
           />
-          <figcaption>
-            <h3 class="text-center text-[30px] font-bold">{project.title}</h3>
-            <p class="text-center text-[15px]">by {project.author}</p>
+          <figcaption class="mt-2">
+            <h3 class="text-center text-lg font-bold leading-tight text-slate-950">{project.title}</h3>
+            <p class="mt-0.5 text-center text-sm text-slate-600">by {project.author}</p>
           </figcaption>
-          <div class="flex justify-center">
+          <div class="mt-auto flex justify-center gap-2 pt-3">
             {
               project.links.map((link) => (
-                <a href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+                <a class="rounded-full bg-slate-100 p-1.5 transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
                   <img
-                    class="mx-2.5 mt-5 h-10 w-10 rounded-[15px]"
+                    class="h-7 w-7 rounded-lg object-contain"
                     src={link.icon}
                     alt=""
                     loading="lazy"

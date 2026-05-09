@@ -16,13 +16,15 @@ interface Props {
 const { title, links } = Astro.props;
 ---
 
-<section id="connect" class="flex w-full flex-col items-center justify-center text-center">
+<section id="connect" class="flex w-full flex-col items-center justify-center px-4 text-center">
   <SectionTitle>{title}</SectionTitle>
-  {
-    links.map((link) => (
-      <a href={link.href} target="_blank" rel="noreferrer">
-        <img class={`${link.className} p-2.5`} src={link.image} alt={link.alt} loading="lazy" />
-      </a>
-    ))
-  }
+  <div class="flex w-full max-w-[520px] flex-wrap items-center justify-center gap-3">
+    {
+      links.map((link) => (
+        <a class="flex h-24 w-32 items-center justify-center rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href={link.href} target="_blank" rel="noreferrer">
+          <img class={`${link.className} max-h-16 max-w-full object-contain p-0`} src={link.image} alt={link.alt} loading="lazy" />
+        </a>
+      ))
+    }
+  </div>
 </section>

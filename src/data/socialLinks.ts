@@ -9,7 +9,7 @@ export const socialLinks = [
     href: "https://www.meetup.com/coding-club-vienna/",
     image: "/connect/meetup.png",
     alt: "Meetup",
-    className: "h-[72px] w-[75px] md:h-auto md:w-[15%]",
+    className: "h-[72px] w-[75px] md:h-auto md:w-32",
   },
   {
     href: "https://www.youtube.com/channel/UC3a1TuxPLpx0CCEoPRGlQfg",

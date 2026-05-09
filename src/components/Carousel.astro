@@ -17,15 +17,15 @@ interface Props {
 const { title, slides, className = "" } = Astro.props;
 ---
 
-<section class:list={[className]}>
-  <h1 class="mb-5 mt-[100px] text-center text-[30px] font-bold md:text-[50px]">{title}</h1>
-  <div class="swiper js-swiper h-[300px] w-[350px] md:h-[600px] md:w-[600px]">
+<section class:list={["w-full px-4", className]}>
+  <h1 class="mb-5 mt-14 text-center text-[clamp(2rem,5vw,2.85rem)] font-extrabold tracking-normal text-slate-950 md:mt-16">{title}</h1>
+  <div class="swiper js-swiper h-[min(520px,calc(100vh-190px))] w-[min(100%,520px,calc(100vh-190px))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-200/70">
     <div class="swiper-wrapper">
       {
         slides.map((slide) => (
           <div class="swiper-slide">
             <img
-              class="h-[270px] w-[370px] rounded-[20px] object-scale-down md:h-[600px] md:w-[600px] md:object-cover"
+              class="h-full w-full object-cover"
               src={slide.src}
               alt={slide.alt}
               loading="lazy"
