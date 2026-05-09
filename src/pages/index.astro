@@ -19,7 +19,7 @@ import { frontmatter as copy } from "../content/home.mdx";
 
 <BaseLayout title={copy.title}>
   <Header />
-  <main class="mt-[230px] flex w-full flex-col items-center justify-center">
+  <main class="mt-[88px] flex w-full flex-col items-center justify-center pb-10 md:mt-[104px]">
     <Hero />
     <Events title={copy.eventTitle} tagline={copy.eventTagline} schedule={copy.eventSchedule} />
     <Carousel title={copy.presentationsTitle} slides={presentationSlides} />

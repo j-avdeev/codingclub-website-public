@@ -8,22 +8,35 @@
 html,
 body {
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: "Noto Sans Display", sans-serif;
-  color: #000;
-  background: #fff;
+  color: #111827;
+  background: #f7f8fb;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 * {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
+::selection {
+  color: #fff;
+  background: #2563eb;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   color: #fff;
+  text-shadow: 0 1px 10px rgb(17 24 39 / 0.35);
 }
 
 .swiper-pagination-bullet-active {

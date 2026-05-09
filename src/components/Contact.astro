@@ -7,7 +7,9 @@ interface Props {
 const { title, email } = Astro.props;
 ---
 
-<section id="contact" class="mb-[30px] flex w-full flex-col items-center justify-center text-center">
-  <h1 class="mb-2.5 mt-[30px] text-center text-[30px] font-bold md:text-[50px]">{title}</h1>
-  <p class="m-0 text-center font-sans text-[15px]">{email}</p>
+<section id="contact" class="mt-20 flex w-full flex-col items-center justify-center border-t border-slate-200 bg-white px-4 py-10 text-center md:mt-24">
+  <h1 class="mb-3 text-center text-[clamp(2rem,6vw,3.25rem)] font-extrabold tracking-normal text-slate-950">{title}</h1>
+  <p class="m-0 text-center font-sans text-base text-slate-700 md:text-lg">
+    <a class="font-semibold text-blue-700 no-underline hover:text-blue-900 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href={`mailto:${email}`}>{email}</a>
+  </p>
 </section>
