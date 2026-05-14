@@ -1,3 +1,22 @@
+export const organizingTeam = [
+  {
+    name: "Evgenii",
+    role: "Founder and IT director",
+    image: "/members/evgenii.jpeg",
+    href: "https://www.linkedin.com/in/evgenii-avdeev/",
+  },
+  {
+    name: "Aayesha",
+    role: "Senior AI Developer",
+    image: "/members/aayesha.png",
+  },
+  {
+    name: "Petro",
+    role: "Java Software Engineer",
+    image: "/members/petro.png",
+  },
+];
+
 export const members = [
   {
     name: "Ricardo",
@@ -10,12 +29,6 @@ export const members = [
     role: "Web-Developer",
     image: "/members/frank.jpg",
     href: "https://depage.net",
-  },
-  {
-    name: "Evgenii",
-    role: "Founder and IT director",
-    image: "/members/evgenii.jpeg",
-    href: "https://www.linkedin.com/in/evgenii-avdeev/",
   },
   {
     name: "Mojtaba",
