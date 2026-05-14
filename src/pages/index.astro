@@ -10,7 +10,7 @@ import MembersGrid from "../components/MembersGrid.astro";
 import Partners from "../components/Partners.astro";
 import ProjectsGrid from "../components/ProjectsGrid.astro";
 import { presentationSlides, pictureSlides } from "../data/gallery";
-import { members } from "../data/members";
+import { members, organizingTeam } from "../data/members";
 import { partners } from "../data/partners";
 import { projects } from "../data/projects";
 import { socialLinks } from "../data/socialLinks";
@@ -25,6 +25,7 @@ import { frontmatter as copy } from "../content/home.mdx";
     <Carousel title={copy.presentationsTitle} slides={presentationSlides} />
     <ProjectsGrid title={copy.projectsTitle} projects={projects} />
     <Carousel title={copy.picturesTitle} slides={pictureSlides} className="md:mt-20" />
+    <MembersGrid title={copy.organizingTeamTitle} members={organizingTeam} />
     <MembersGrid title={copy.membersTitle} members={members} />
     <ConnectLinks title={copy.connectTitle} links={socialLinks} />
     <Partners title={copy.partnersTitle} partners={partners} />
